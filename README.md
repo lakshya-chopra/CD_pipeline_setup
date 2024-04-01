@@ -6,13 +6,13 @@
     Docker : can be read at the link given below
   ```
 - To set up a CD pipeline, first we'll create a basic web app written in Python's Flask, for this execute the following commands:
-  `
+  ```
   $ mkdir pythonWebApp
   $ cd pythonWebApp
   $ mkdir app
   $ touch app/app.py
   $ vi app/app.py
-  `
+  ```
   
   ```
   In `app.py`, paste the following code:
