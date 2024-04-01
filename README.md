@@ -16,7 +16,7 @@
   
   ```
   In `app.py`, paste the following code:
-   <code>
+   
   from flask import Flask
     
     app = Flask(__name__)
@@ -29,7 +29,7 @@
     
     if __name__ == "__main__":
         app.run(host='0.0.0.0', port=8008, debug=True)
-  </code>
+ 
     ```
   Save the file and then create a Dockerfile in the `pythonWebApp` directory (not in the app sub-folder):
   ```
@@ -56,8 +56,9 @@
 
 ## Setting up a CD pipeline using Jenkins:
 - Install Java (preferably OpenJDK-17):
-  `sudo apt-get install openjdk-17-jdk`
-  test using `java -version`
+  `sudo apt-get install openjdk-17-jdk`, then
+  test it using `java -version`.
+- Later you may add Java to global environment variables so that other applications can access it.
 - Install git
 - Install Jenkins:
     ```
@@ -76,3 +77,4 @@
   $ sudo ufw enable
   $ sudo ufw status
   ```
+- After this, login in into Jenkins by going to it’s default link: http://127.0.0.1:8008, here enter the initialAdminPassword.
