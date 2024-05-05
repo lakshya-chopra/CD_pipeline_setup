@@ -78,3 +78,48 @@
   $ sudo ufw status
   ```
 - After this, login in into Jenkins by going to it’s default link: http://127.0.0.1:8008, here enter the initialAdminPassword.
+
+## GitHub Webhook setup:
+-  In your Jenkins dashboard, go to `Manage Jenkins -> System Configuration` and from there set up the Github server with your credentials:
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/a97e68dd-868d-441d-8589-094bae0278b5)
+
+- Navigate the settings of your github project, and create a webhook which will send a notification to your app whenever you do some changes to your github repo:
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/84edf10b-6fbd-4d03-9be0-adb8542ec9e6)
+
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/2ffc188c-3687-41b5-8f82-e8adf8c5bb49)
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/8c0491ae-cab0-49e3-a05a-4e161ab0b5b9)
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/e571636f-92f4-478c-9fbb-89dd3d72caca)
+- ```
+  pipeline {
+    agent any
+
+    stages {
+        stage("Clone Code") {
+            steps {
+                echo "Cloning the code"
+                git url: "https://github.com/lakshya-chopra/pythonWebApp.git", branch: "main"
+            }
+        }
+
+        stage("Build") {
+            steps {
+                echo "Building the Docker image"
+                sh "docker build -t myapp ."
+            }
+        }
+
+
+        stage("Deploy") {
+            steps {
+                echo "Deploying the container"
+                sh "docker run -it -p 8080:8080 myapp"
+                
+            }
+        }
+    }
+  }
+```
+
+
+
+
