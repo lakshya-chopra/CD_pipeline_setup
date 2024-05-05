@@ -79,7 +79,7 @@
   ```
 - After this, login in into Jenkins by going to it’s default link: http://127.0.0.1:8008, here enter the initialAdminPassword.
 - Create a new pipeline project, and configure it as a github project:
-- After this, write a pipeline script, like this, and make sure you approve it:
+- After this, write a Jenkinsfile in your project's root, like this:
 - ```
   pipeline {
     agent any
@@ -103,13 +103,16 @@
         stage("Deploy") {
             steps {
                 echo "Deploying the container"
-                sh "docker run -it -p 8080:8080 myapp"
+                sh "docker run -p 80:80 myapp"
                 
             }
         }
     }
   }
   ```
+  - Also do this:
+  - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/d6bcd3d9-9bc2-4274-9bc7-599b3dd2f769)
+
   - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/2ffc188c-3687-41b5-8f82-e8adf8c5bb49)
   - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/8c0491ae-cab0-49e3-a05a-4e161ab0b5b9)
   - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/e571636f-92f4-478c-9fbb-89dd3d72caca)
@@ -132,6 +135,9 @@
 - [Check this for setting Git exe](https://stackoverflow.com/questions/8639501/jenkins-could-not-run-git)
 - [And this too](https://stackoverflow.com/questions/23906352/git-pullrequest-job-failed-couldnt-find-any-revision-to-build-verify-the-repo)
 - Ensure that Jenkins isn't blocked by some firewall.
+- You may, also tick this option to stop the old builds, whenever you build a new one, as this can lead to port conflicting in docker.
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/b0ac135a-5dd2-4a58-a0c5-6720304341cf)
+
 
 
 
