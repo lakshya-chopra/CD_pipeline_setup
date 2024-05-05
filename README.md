@@ -125,6 +125,14 @@
 
 - Navigate the settings of your github project, and create a webhook which will send a notification to your app whenever you do some changes to your github repo:
 - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/84edf10b-6fbd-4d03-9be0-adb8542ec9e6)
+- Finally, build the pipeline and do some changes to your github code and see whether you're receiving the notifications or not:
+- like this:
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/5e68c496-9f5b-4b52-88f1-c18b817835ee)
+- You might face some errors while building, so ensure that git is properly configured (path correctly set in the Git plugin) & that your github credentials are correct and available. Also ensure that your Github branch is named as `main`, or you'll have to change the jenkins config.
+- [Check this for setting Git exe](https://stackoverflow.com/questions/8639501/jenkins-could-not-run-git)
+- [And this too](https://stackoverflow.com/questions/23906352/git-pullrequest-job-failed-couldnt-find-any-revision-to-build-verify-the-repo)
+- Ensure that Jenkins isn't blocked by some firewall.
+
 
 
   
