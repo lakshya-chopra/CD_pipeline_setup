@@ -82,6 +82,9 @@
 ## GitHub Webhook setup:
 -  In your Jenkins dashboard, go to `Manage Jenkins -> System Configuration` and from there set up the Github server with your credentials:
 - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/a97e68dd-868d-441d-8589-094bae0278b5)
+- In your github webhook, you'll need to have a public web url, where github can post data on, this can be done via `ngrok` or by using any public cloud provider.
+    - Install `ngrok` via: ```sudo snap install ngrok```
+    - Create a new ngrok account, and then run `ngrok http 80` which directs your the public url -> `localhost:80`
 
 - Navigate the settings of your github project, and create a webhook which will send a notification to your app whenever you do some changes to your github repo:
 - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/84edf10b-6fbd-4d03-9be0-adb8542ec9e6)
