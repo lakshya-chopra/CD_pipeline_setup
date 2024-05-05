@@ -4,6 +4,9 @@
     Python 3 
     Flask : pip3 install Flask
     Docker : can be read at the link given below
+    Jenkins
+    JDK
+    Ngrok
   ```
 - To set up a CD pipeline, first we'll create a basic web app written in Python's Flask, for this execute the following commands:
   ```
