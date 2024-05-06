@@ -129,8 +129,8 @@
     - Create a new ngrok account, and then run `ngrok http 80` which directs your the public url -> `localhost:80`
     - Simulatenously, deploy the app using `docker run -it -p 80:80 myapp`, and check whether it's accessible on ngrok's website or not.
 
-- Navigate the settings of your github project, and create a webhook which will send a notification to your app whenever you do some changes to your github repo:
-- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/84edf10b-6fbd-4d03-9be0-adb8542ec9e6)
+- Navigate the settings of your github project, and create a webhook which will send a notification to your app whenever you do some changes to your github repo (you may disable SSL if your payload url is not https secure)
+- ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/9a831baf-15b6-4e43-8445-4fd4000036df)
 - Finally, build the pipeline and do some changes to your github code and see whether you're receiving the notifications or not:
 - like this:
 - ![image](https://github.com/lakshya-chopra/CD_pipeline_setup/assets/77010972/5e68c496-9f5b-4b52-88f1-c18b817835ee)
